@@ -17,11 +17,6 @@ provider "azurerm" {
     features {}
 }
 
-variables{
-	
-	
-}
-
 resource "azurerm_resource_group" "example" {
   name     = "hugo-resources"
   location ="eastus"
