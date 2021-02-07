@@ -12,12 +12,20 @@ terraform {
 	}
    }
 }
+variable "CLIENT_ID"{
+}
+variable "CLIENT_SECRET"{
+}
+variable "SUBSCRIPTION_ID"{
+}
+variable "TENANT_ID"{
+}
 
 provider "azurerm" {
-   client_id = var.deployment_client_id
-   client_secret = var.deployment_client_secret
-   subscription_id= var.deployment_subscription_id
-   tenant_id= var.deployment_tenant_id
+   client_id = var.CLIENT_ID
+   client_secret = var.CLIENT_SECRET
+   subscription_id= var.SUBSCRIPTION_ID
+   tenant_id= var.TENANT_ID
    features {}
 }
 
