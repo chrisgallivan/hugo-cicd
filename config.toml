@@ -1,5 +1,5 @@
 baseurl = "http://example.com"
 disablePathToLower = false
 languageCode = "en-us"
-title = "My Site title"
+title = "My Site Title Push"
 theme = "ananke"
