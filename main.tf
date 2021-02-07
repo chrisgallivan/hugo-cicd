@@ -14,11 +14,15 @@ terraform {
 }
 
 provider "azurerm" {
-   location ="eastus"
+   client_id = var.client_id
+   client_secret = var.client_secret
+   subscription_id= var.subscription_id
+   tenant_id= var.tenant_id
 }
 
 resource "azurerm_resource_group" "example" {
   name     = "hugo-resources"
+  location ="eastus"
 }
 
 resource "azurerm_app_service_plan" "example" {
