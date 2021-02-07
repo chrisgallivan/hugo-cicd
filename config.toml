@@ -1,0 +1,5 @@
+baseurl = "http://example.com"
+disablePathToLower = false
+languageCode = "en-us"
+title = "My Site title"
+theme = "ananke"
