@@ -1,21 +1,24 @@
 #terraform remote state
 terraform {
-	backend "remote" {
-		organization = "KATA-FRIDAYS"
-		workspaces {
-			name = "gh-actions-demo"
-		}
+     required_providers {
+        azurerm = {
+           source = "hashicorp/azurerm"
+        }
+    }
+    backend "remote" {
+	organization = "KATA-FRIDAYS"
+	workspaces {
+		name = "gh-actions-demo"
 	}
+   }
 }
 
 provider "azurerm" {
-   skip_provider_registration = "true"
-   features {}
+   location ="eastus"
 }
 
 resource "azurerm_resource_group" "example" {
   name     = "hugo-resources"
-  location = "eastus"
 }
 
 resource "azurerm_app_service_plan" "example" {
