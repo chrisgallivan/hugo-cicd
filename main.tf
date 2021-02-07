@@ -14,10 +14,7 @@ terraform {
 }
 
 provider "azurerm" {
-   client_id = var.client_id
-   client_secret = var.client_secret
-   subscription_id= var.subscription_id
-   tenant_id= var.tenant_id
+   
 }
 
 resource "azurerm_resource_group" "example" {
@@ -56,4 +53,16 @@ resource "azurerm_app_service" "example" {
     "DOCKER_ENABLE_CI"                    = true
    
   }
+}
+output "app_service_name" {
+  value = azurerm_app_service.example.name
+}
+
+output "app_service_default_hostname" {
+  value = "https://${azurerm_app_service.example.default_site_hostname}"
+}
+
+output "app_url" {
+  value = format("%s%s","http://", azurerm_app_service.example.default_site_hostname)
+  
 }
